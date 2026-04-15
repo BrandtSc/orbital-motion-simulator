@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "main.cpp",
+        "C:/msys64/mingw64/include/glad/glad.c",  // absolute path
+        "-I", "C:/dev/vcpkg/installed/x64-mingw-dynamic/include",
+        "-I", "C:/msys64/mingw64/include",
+        "-L", "C:/msys64/mingw64/lib",
+        "-o", "main.exe",
+        "-lglfw3", "-lglew32", "-lopengl32", "-lgdi32", "-luser32", "-lkernel32", "-lmingw32"
+      ],
+      "options": {"cwd": "${workspaceFolder}"},
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
